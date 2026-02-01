@@ -53,48 +53,44 @@ transition: all 0.4s ease;   /* NEVER 0.2s or 0.3s — Jonas explicitly flagged 
 
 ---
 
-## Quiz Engine Spec
+## Quiz Engine
 
-Every quiz in every artifact type must implement ALL of the following. No shortcuts.
+Use the pre-built component in `assets/quiz-engine.jsx`. Read that file, copy the component into your artifact, and pass it a `questions` array. Do **not** rewrite the quiz logic from scratch — the template already implements dot nav, feedback, multi-select, results screen, and all the timing/style rules.
 
-### Question types
-- **Single-select:** Radio-button style. Feedback triggers immediately on selection.
-- **Multi-select:** Checkbox style. Include a "Submit" button — feedback triggers on submit, not on individual checkbox change.
+```jsx
+<QuizEngine questions={questions} accentColor="#a855f7" />
+```
 
-### Feedback (shown after every question)
-1. Correct / incorrect indicator
-2. Show correct answer(s) if the user answered wrong
-3. **Explanation:** Why the answer is correct / incorrect — always present
-4. **Mnemonic tip:** Optional field — include a short memory aid where you can
+**Props:**
+- `questions` — array (format below)
+- `accentColor` — hex string; pick the subject accent colour from the table above. Default is purple.
 
-### Progress & Score
-- Progress indicator: current question / total, or a progress bar
-- Score accumulates across all questions
-
-### Navigation bar
-- Clickable numbered dots, one per question
-- Colour-coded by status:
-  - **Purple** = current question
-  - **Green** = answered correctly
-  - **Red** = answered incorrectly
-  - **Grey** = unanswered
-- **NO legend below the bar.** Colour alone conveys meaning.
-
-### Results Screen (shown after last question)
-- Final score + percentage
-- Motivational message, thresholded:
-  | Score | Message tone |
-  |---|---|
-  | ≥ 90% | Perfect / výborně |
-  | ≥ 70% | Good / dobře |
-  | ≥ 50% | OK / mohlo by to být lepší |
-  | < 50% | Needs more study / potřebuješ více přípravy |
-- "Try again" / restart button
+**Question object format:**
+```js
+{
+  question:    "Text otázky",
+  type:        "single" | "multi",        // single = okamžitá zpětná vazba; multi = checkboxy + tlačítko Potvrdít
+  options:     ["Možnost A", "Možnost B", ...],
+  correct:     [0, 2],                    // indexy do options[]. Single: jeden prvek. Multi: jeden nebo více.
+  explanation: "Vysvětlení — povinné",
+  tip:         "Mnemonic tip — volitelné" // vynechej klíč, pokud neexistuje
+}
+```
 
 ---
 
 ## Technical Rules
 
-- **Standalone HTML preferred.** For complex apps, avoid external React component libraries — `lucide-react` causes size issues in large artifacts. Use **emoji as icon fallback** instead.
-- **PDF generation (ReportLab):** ALWAYS register DejaVu Sans font explicitly before drawing any text. Default Helvetica breaks Czech diacritics.
-- **If the artifact fails to load:** The simpler version (emoji icons, no external libs, inline everything) is the one that works. Default to this approach from the start.
+### Framework choice
+- **React for interactive apps** (study apps, vocab drills, RPG tools, presentation aids). These have complex state — quiz navigation, score tracking, tab switching, flashcard flips, collapsible sections. Managing all of that imperatively in vanilla HTML is more error-prone than React's declarative state.
+- **No external component libraries.** `lucide-react` and similar cause size/crash issues. Use **emoji as icon fallback** for all icons.
+- **Vanilla HTML only for simple / static artifacts** — e.g. a grammar exercise sheet that replicates a textbook page layout with minimal interactivity.
+- **Note on Simon Willison's "no React" rule:** Valid for small portable utilities that need to be copy-pasted and hosted elsewhere. Does not apply here — these artifacts live inside the viewer and are stateful enough that React pays for itself.
+
+### PDF generation (ReportLab)
+- ALWAYS register DejaVu Sans font explicitly before drawing any text. Default Helvetica breaks Czech diacritics.
+  ```python
+  from reportlab.pdfbase import pdfmetrics
+  from reportlab.pdfbase.ttfonts import TTFont
+  pdfmetrics.registerFont(TTFont('DejaVu', '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'))
+  ```
