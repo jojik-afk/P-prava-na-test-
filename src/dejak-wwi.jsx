@@ -1477,7 +1477,7 @@ PŘÍKLAD SPRÁVNÉ ODPOVĚDI:
   ]
 };
 
-export default function HistoryStudyApp() {
+export default function App() {
   const [activeTab, setActiveTab] = useState('study');
   const [selectedTopic, setSelectedTopic] = useState(null);
   const [quizStarted, setQuizStarted] = useState(false);
