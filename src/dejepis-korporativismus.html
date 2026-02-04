@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="subject" content="History">
+  <meta name="topic" content="Korporativismus">
+  <meta name="template" content="practice">
+  <title>Korporativismus – Studijní materiál pro tisk</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      font-size: 11pt;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #fff;
+      padding: 20px;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      font-size: 22pt;
+      text-align: center;
+      margin-bottom: 5px;
+      color: #b45309;
+      border-bottom: 2px solid #b45309;
+      padding-bottom: 10px;
+    }
+    
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 20px;
+      font-size: 11pt;
+    }
+    
+    h2 {
+      font-size: 14pt;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid currentColor;
+    }
+    
+    h3 {
+      font-size: 12pt;
+      margin-top: 15px;
+      margin-bottom: 8px;
+    }
+    
+    p {
+      margin-bottom: 8px;
+      text-align: justify;
+    }
+    
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+    
+    li {
+      margin-bottom: 4px;
+    }
+    
+    .highlight {
+      padding: 10px 12px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border-left: 4px solid;
+      background: #f9f9f9;
+    }
+    
+    .q1 { border-color: #d97706; background: #fffbeb; }
+    .q2 { border-color: #0891b2; background: #ecfeff; }
+    .q3 { border-color: #16a34a; background: #f0fdf4; }
+    .q4 { border-color: #dc2626; background: #fef2f2; }
+    .q5 { border-color: #4b5563; background: #f3f4f6; }
+    .q6 { border-color: #7c3aed; background: #f5f3ff; }
+    .q7 { border-color: #059669; background: #ecfdf5; }
+    .q8 { border-color: #ea580c; background: #fff7ed; }
+    
+    .answer-box {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      page-break-inside: avoid;
+    }
+    
+    .answer-header {
+      padding: 10px 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .answer-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #fff;
+    }
+    
+    .answer-content {
+      padding: 12px;
+      border-top: 1px solid #ddd;
+      font-size: 10pt;
+    }
+    
+    .answer-content ul, .answer-content ol {
+      margin-left: 18px;
+    }
+    
+    .a1 .answer-header { background: #fffbeb; }
+    .a1 .answer-num { background: #d97706; }
+    .a2 .answer-header { background: #ecfeff; }
+    .a2 .answer-num { background: #0891b2; }
+    .a3 .answer-header { background: #f0fdf4; }
+    .a3 .answer-num { background: #16a34a; }
+    .a4 .answer-header { background: #fef2f2; }
+    .a4 .answer-num { background: #dc2626; }
+    .a5 .answer-header { background: #f3f4f6; }
+    .a5 .answer-num { background: #4b5563; }
+    .a6 .answer-header { background: #f5f3ff; }
+    .a6 .answer-num { background: #7c3aed; }
+    .a7 .answer-header { background: #ecfdf5; }
+    .a7 .answer-num { background: #059669; }
+    .a8 .answer-header { background: #fff7ed; }
+    .a8 .answer-num { background: #ea580c; }
+    
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 6px;
+      font-size: 9pt;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .legend-color {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      border: 2px solid;
+    }
+    
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 20px 0;
+    }
+    
+    .questions-section {
+      background: #fffbeb;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 20px;
+    }
+    
+    .questions-section h2 {
+      color: #b45309;
+      border-color: #b45309;
+      margin-top: 0;
+    }
+    
+    .section-break {
+      page-break-before: always;
+    }
+    
+    @media print {
+      body {
+        padding: 0;
+        font-size: 10pt;
+      }
+      
+      h1 {
+        font-size: 18pt;
+      }
+      
+      h2 {
+        font-size: 12pt;
+      }
+      
+      .highlight {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .answer-box {
+        page-break-inside: avoid;
+      }
+      
+      .answer-header, .answer-num, .legend {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Korporativismus</h1>
+  <p class="subtitle">Charakteristika, vývoj a příklady – Studijní materiál</p>
+  
+  <div class="legend">
+    <strong>Legenda barev:</strong>
+    <div class="legend-item"><div class="legend-color" style="background:#fffbeb;border-color:#d97706"></div> Ot.1</div>
+    <div class="legend-item"><div class="legend-color" style="background:#ecfeff;border-color:#0891b2"></div> Ot.2</div>
+    <div class="legend-item"><div class="legend-color" style="background:#f0fdf4;border-color:#16a34a"></div> Ot.3</div>
+    <div class="legend-item"><div class="legend-color" style="background:#fef2f2;border-color:#dc2626"></div> Ot.4</div>
+    <div class="legend-item"><div class="legend-color" style="background:#f3f4f6;border-color:#4b5563"></div> Ot.5</div>
+    <div class="legend-item"><div class="legend-color" style="background:#f5f3ff;border-color:#7c3aed"></div> Ot.6</div>
+    <div class="legend-item"><div class="legend-color" style="background:#ecfdf5;border-color:#059669"></div> Ot.7</div>
+    <div class="legend-item"><div class="legend-color" style="background:#fff7ed;border-color:#ea580c"></div> Ot.8</div>
+  </div>
+
+  <h2 style="color:#d97706">Definice a charakteristika korporativismu</h2>
+  
+  <div class="highlight q1">
+    <p>Korporativismus je politický, ekonomický a sociální systém, který zdůrazňuje organizaci společnosti podle profesních, průmyslových nebo ekonomických sektorů, tzv. korporací. Tyto korporace jsou zaměřeny na koordinaci a spolupráci mezi státem, zaměstnavateli a pracovníky za účelem dosažení společných cílů, jako je ekonomický rozvoj, stabilita a společenský konsenzus.</p>
+  </div>
+
+  <div class="highlight q1">
+    <p><strong>Hlavní rysy korporativismu zahrnují:</strong></p>
+    <ol>
+      <li><strong>Struktura podle odvětví:</strong> Společnost je organizována podle profesí a průmyslů, přičemž tyto skupiny hrají aktivní roli v rozhodovacích procesech.</li>
+      <li><strong>Konsenzuální rozhodování:</strong> Důležitá rozhodnutí jsou přijímána v rámci dialogu mezi jednotlivými korporacemi a státem.</li>
+      <li><strong>Hierarchická struktura:</strong> Každá korporace je více či méně hierarchicky řízena, což může omezovat individuální iniciativu ve prospěch společného zájmu.</li>
+    </ol>
+  </div>
+
+  <h2 style="color:#0891b2">Historické kořeny a ideové zdroje</h2>
+  
+  <div class="highlight q2">
+    <p>Korporativismus vychází z ideálů organické společnosti, kde jednotlivé složky fungují jako části jednoho těla, a každá plní svou specifickou roli. Tento přístup je částečně ovlivněn středověkými cechy a křesťanskými sociálními doktrínami, zejména katolickou naukou o společenské solidaritě a subsidiaritě, či středověkým učením „o trojím lidu".</p>
+  </div>
+
+  <div class="highlight q2">
+    <p>Moderní korporativismus se objevil ve 20. století jako reakce na rozpory mezi kapitalismem a socialismem. Jeho cílem bylo vyhnout se třídnímu boji prostřednictvím spolupráce mezi jednotlivými složkami společnosti.</p>
+  </div>
+
+  <h2 style="color:#16a34a">Zařazení na pravo-levé ose</h2>
+  
+  <div class="highlight q3">
+    <p>Korporativismus nelze jednoznačně zařadit na pravo-levou politickou osu. Existují jeho pravicové i levicové varianty:</p>
+    <ul>
+      <li><strong>Pravicový korporativismus:</strong> Zaměřuje se na zachování sociální hierarchie a podporuje tradiční hodnoty, jako je vlastnictví a autorita.</li>
+      <li><strong>Levicový korporativismus:</strong> Klade důraz na rovnost, spolupráci a kolektivní odpovědnost za řešení ekonomických a sociálních otázek.</li>
+    </ul>
+  </div>
+
+  <h2 style="color:#dc2626">Historický vývoj a příklady zemí</h2>
+  
+  <p>Korporativismus byl praktikován v různých zemích s rozdílnými úspěchy a specifiky:</p>
+
+  <div class="highlight q4">
+    <ol>
+      <li><strong>Meziválečná Itálie:</strong> Benito Mussolini zavedl korporativní stát, který reguloval vztahy mezi zaměstnavateli a zaměstnanci. Tento model byl kritizován jako nástroj fašistické kontroly.</li>
+      <li><strong>Portugalský Estado Novo (1932-74):</strong> Autoritářský režim Antónia Salazara kombinoval korporativní principy s konzervativním katolicismem.</li>
+      <li><strong>Skandinávský model:</strong> Sociálně demokratické systémy ve Švédsku a Norsku obsahují korporativní prvky, jako je trojstranná spolupráce mezi státem, odbory a zaměstnavatelskými svazy. Počátky spadají do období mezi válkami a v jisté míře trvají dodnes.</li>
+      <li><strong>Německo a Rakousko po druhé světové válce:</strong> Sociální tržní hospodářství obsahovalo mechanismy dialogu mezi průmyslovými odvětvími a vládou.</li>
+      <li><strong>Asijští tygři:</strong> V zemích jako Jižní Korea, Singapur a Tchaj-wan lze nalézt korporativní prvky ve formě koordinace mezi státem a velkými průmyslovými skupinami. Tato spolupráce vedla k rychlému ekonomickému rozvoji, avšak byla kritizována za přílišné propojení politiky a ekonomiky.</li>
+    </ol>
+  </div>
+
+  <h2 style="color:#7c3aed">Pozitiva korporativismu</h2>
+  
+  <div class="highlight q6">
+    <ol>
+      <li><strong>Stabilita:</strong> Spolupráce mezi skupinami minimalizuje konflikty a zajišťuje sociální soudržnost.</li>
+      <li><strong>Efektivita:</strong> Koordinace rozhodovacích procesů může přispět k rychlejšímu řešení problémů.</li>
+      <li><strong>Vyrovnávání zájmů:</strong> Systém podporuje hledání konsenzu mezi různými společenskými skupinami.</li>
+    </ol>
+  </div>
+
+  <h2 style="color:#7c3aed">Negativa korporativismu</h2>
+  
+  <div class="highlight q6">
+    <ol>
+      <li><strong>Byrokracie:</strong> Komplexní struktury mohou zpomalovat rozhodování a zvyšovat administrativní náklady.</li>
+      <li><strong>Omezení konkurence:</strong> Přílišná regulace může bránit inovacím a ekonomickému růstu.</li>
+      <li><strong>Riziko zneužití moci:</strong> Korporativní systémy mohou být využité k upevňování autoritářských režimů.</li>
+    </ol>
+  </div>
+
+  <h2 style="color:#059669">Příklad Baťova Zlína</h2>
+  
+  <div class="highlight q7">
+    <p>Baťův Zlín představuje unikátní příklad korporativního modelu v Českých zemích v období První republiky. Tomáš Baťa (1876-1932) vytvořil průkopnický systém, který kombinoval podnikatelskou efektivitu se sociální odpovědností. Město Zlín, jež bylo v období státního socialismu přejmenováno na Gottwaldov, bylo plánováno jako moderní průmyslové a sociální centrum.</p>
+  </div>
+
+  <div class="highlight q7">
+    <p>Tento přístup zahrnoval:</p>
+    <ul>
+      <li><strong>Bydlení a životní podmínky zaměstnanců:</strong> Stavba moderních bytů, škol a nemocnic, které měly zvýšit kvalitu života pracovníků.</li>
+      <li><strong>Vzdělávání:</strong> Zřízení Baťovy školy práce, která kladla důraz na praktické dovednosti, podnikatelské myšlení a morální hodnoty.</li>
+      <li><strong>Kultura a volný čas:</strong> Podpora kulturních aktivit, sportovních událostí a komunitního života.</li>
+    </ul>
+  </div>
+
+  <p>Baťův přístup měl významný dopad nejen na regionální ekonomiku, ale i na životní styl a hodnoty obyvatel Zlína. Stal se inspirací pro moderní management a urbanismus.</p>
+
+  <h2 style="color:#ea580c">Sporné rysy a negativní dopady Baťova modelu</h2>
+  
+  <div class="highlight q8">
+    <ol>
+      <li><strong>Sociální kontrola:</strong> Zaměstnanci byli pod přísným dohledem, což mohlo zasahovat do jejich soukromí a osobní svobody.</li>
+      <li><strong>Závislost na firmě:</strong> Systém vytvářel silnou závislost pracovníků na zaměstnavateli, což mohlo být problematické při hospodářských potížích nebo změnách ve vedení firmy.</li>
+      <li><strong>Nerovnost:</strong> I přes propagaci spolupráce a solidarity zůstávala rozhodovací moc v rukou vedení firmy, což mohlo vést k nerovnováze mezi zaměstnavateli a zaměstnanci.</li>
+    </ol>
+  </div>
+
+  <div class="highlight q8">
+    <p>Kritický pohled: Baťův model může být také příkladem města-firmy, kde manager vládne tvrdou rukou a odmítá dělnické odbory, ženskou emancipaci, participaci zaměstnanců a jejich individuální potřeby.</p>
+  </div>
+
+  <hr>
+
+  <h2 style="color:#4b5563">Tripartita: Definice a účel</h2>
+  
+  <div class="highlight q5">
+    <p>Tripartita je specifický mechanismus korporativního rozhodování, který zahrnuje tři klíčové partnery: zástupce státu (např. Ministerstvo průmyslu, financí, sociálních věcí), zaměstnavatelů (Svaz průmyslu a dopravy, Hospodářská komora, Česká lékařská komora) a odborů (Českomoravská konfederace odborových svazů).</p>
+  </div>
+
+  <div class="highlight q5">
+    <p>Tripartitní jednání se obvykle zaměřují na:</p>
+    <ul>
+      <li>Dohody o mzdách a pracovních podmínkách (např. navýšení minimální mzdy)</li>
+      <li>Nastavení zákonných norem v oblasti zaměstnanosti a sociálního zabezpečení (úpravy Zákoníku práce)</li>
+      <li>Diskusi o klíčových ekonomických opatřeních (daňová politika, důchodová reforma, Zákon o státní službě)</li>
+    </ul>
+    <p>Tento model je běžně používán v řadě zemí jako prostředek prevence konfliktů a posilování dialogu mezi klíčovými aktéry.</p>
+  </div>
+
+  <div class="questions-section">
+    <h2>📋 OTÁZKY</h2>
+    <ol>
+      <li>Co je korporativismus a jaké jsou jeho hlavní rysy?</li>
+      <li>Z jakých historických a ideových zdrojů korporativismus vychází?</li>
+      <li>Jak lze korporativismus zařadit na pravo-levé politické spektrum?</li>
+      <li>Ve kterých zemích a obdobích byl korporativismus praktikován, a jaké byly jeho výsledky?</li>
+      <li>Co je tripartita, jaké subjekty zahrnuje a na co se zaměřuje?</li>
+      <li>Jaká jsou hlavní pozitiva a negativa korporativismu?</li>
+      <li>Jaký význam měl Baťův model Zlína a jaké prvky korporativismu v něm byly zahrnuty?</li>
+      <li>Jaké byly sporné rysy a negativní dopady Baťova modelu na zaměstnance a komunitu?</li>
+    </ol>
+  </div>
+
+  <div class="section-break"></div>
+  
+  <h1 style="font-size:16pt;margin-top:0">Odpovědi na otázky</h1>
+
+  <div class="answer-box a1">
+    <div class="answer-header">
+      <div class="answer-num">1</div>
+      <span>Co je korporativismus a jaké jsou jeho hlavní rysy?</span>
+    </div>
+    <div class="answer-content">
+      <p><strong>📖 Definice:</strong> Korporativismus je politický, ekonomický a sociální systém, který zdůrazňuje organizaci společnosti podle profesních, průmyslových nebo ekonomických sektorů (tzv. korporací).</p>
+      <p><strong>🎯 Cíl:</strong> Koordinace a spolupráce mezi státem, zaměstnavateli a pracovníky za účelem dosažení společných cílů: ekonomický rozvoj, stabilita a společenský konsenzus.</p>
+      <p><strong>⚙️ Hlavní rysy:</strong></p>
+      <ul>
+        <li><strong>Struktura podle odvětví</strong> – společnost je organizována podle profesí a průmyslů</li>
+        <li><strong>Konsenzuální rozhodování</strong> – důležitá rozhodnutí jsou přijímána v rámci dialogu mezi korporacemi a státem</li>
+        <li><strong>Hierarchická struktura</strong> – každá korporace je hierarchicky řízena</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="answer-box a2">
+    <div class="answer-header">
+      <div class="answer-num">2</div>
+      <span>Z jakých historických a ideových zdrojů vychází?</span>
+    </div>
+    <div class="answer-content">
+      <p><strong>🏛️ Historické kořeny:</strong></p>
+      <ul>
+        <li><strong>Ideál organické společnosti</strong> – jednotlivé složky fungují jako části jednoho těla</li>
+        <li><strong>Středověké cechy</strong> – sdružování řemeslníků a obchodníků podle profesí</li>
+        <li><strong>Křesťanské sociální doktríny</strong> – katolická nauka o solidaritě a subsidiaritě</li>
+        <li><strong>Středověké učení „o trojím lidu"</strong></li>
+      </ul>
+      <p><strong>📅 Moderní vznik:</strong> 20. století jako reakce na rozpory mezi kapitalismem a socialismem. Cílem bylo vyhnout se třídnímu boji.</p>
+    </div>
+  </div>
+
+  <div class="answer-box a3">
+    <div class="answer-header">
+      <div class="answer-num">3</div>
+      <span>Jak zařadit na pravo-levé spektrum?</span>
+    </div>
+    <div class="answer-content">
+      <p><strong>⚠️ Odpověď: Nelze jednoznačně zařadit!</strong> Existují pravicové i levicové varianty:</p>
+      <p><strong>🔵 Pravicový korporativismus:</strong> Zachování sociální hierarchie, tradiční hodnoty (vlastnictví, autorita)</p>
+      <p><strong>🔴 Levicový korporativismus:</strong> Důraz na rovnost, spolupráci a kolektivní odpovědnost</p>
+    </div>
+  </div>
+
+  <div class="answer-box a4">
+    <div class="answer-header">
+      <div class="answer-num">4</div>
+      <span>Historické příklady praktikování</span>
+    </div>
+    <div class="answer-content">
+      <ul>
+        <li><strong>Meziválečná Itálie:</strong> Mussoliniho korporativní stát – kritizován jako nástroj fašistické kontroly</li>
+        <li><strong>Portugalsko (1932–74):</strong> Estado Novo – Salazarův režim + konzervativní katolicismus</li>
+        <li><strong>Skandinávie:</strong> Trojstranná spolupráce (stát, odbory, zaměstnavatelé) – trvá dodnes</li>
+        <li><strong>Německo a Rakousko po WWII:</strong> Sociální tržní hospodářství</li>
+        <li><strong>Asijští tygři:</strong> Koordinace státu a průmyslových skupin → rychlý rozvoj</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="answer-box a5">
+    <div class="answer-header">
+      <div class="answer-num">5</div>
+      <span>Co je tripartita?</span>
+    </div>
+    <div class="answer-content">
+      <p><strong>📋 Definice:</strong> Mechanismus korporativního rozhodování zahrnující tři klíčové partnery:</p>
+      <ol>
+        <li><strong>Stát</strong> – Ministerstvo průmyslu, financí, sociálních věcí</li>
+        <li><strong>Zaměstnavatelé</strong> – Svaz průmyslu a dopravy, Hospodářská komora</li>
+        <li><strong>Odbory</strong> – Českomoravská konfederace odborových svazů</li>
+      </ol>
+      <p><strong>🎯 Zaměření:</strong> Mzdy a pracovní podmínky, zákonné normy (Zákoník práce), ekonomická opatření (daně, důchody)</p>
+    </div>
+  </div>
+
+  <div class="answer-box a6">
+    <div class="answer-header">
+      <div class="answer-num">6</div>
+      <span>Pozitiva a negativa korporativismu</span>
+    </div>
+    <div class="answer-content">
+      <p><strong>✅ POZITIVA:</strong></p>
+      <ul>
+        <li><strong>Stabilita</strong> – minimalizace konfliktů, sociální soudržnost</li>
+        <li><strong>Efektivita</strong> – koordinace → rychlejší řešení problémů</li>
+        <li><strong>Vyrovnávání zájmů</strong> – hledání konsenzu</li>
+      </ul>
+      <p><strong>❌ NEGATIVA:</strong></p>
+      <ul>
+        <li><strong>Byrokracie</strong> – zpomalení rozhodování, vyšší náklady</li>
+        <li><strong>Omezení konkurence</strong> – brzda inovací</li>
+        <li><strong>Riziko zneužití moci</strong> – upevňování autoritářských režimů</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="answer-box a7">
+    <div class="answer-header">
+      <div class="answer-num">7</div>
+      <span>Význam Baťova modelu Zlína</span>
+    </div>
+    <div class="answer-content">
+      <p><strong>👤 Tvůrce:</strong> Tomáš Baťa (1876–1932)</p>
+      <p><strong>💡 Principy:</strong> Kombinace podnikatelské efektivity a sociální odpovědnosti</p>
+      <p><strong>🔧 Hlavní prvky:</strong></p>
+      <ul>
+        <li><strong>Bydlení</strong> – moderní byty, školy, nemocnice</li>
+        <li><strong>Vzdělávání</strong> – Baťova škola práce</li>
+        <li><strong>Kultura a volný čas</strong> – kulturní aktivity, sport</li>
+      </ul>
+      <p><strong>🌟 Dopad:</strong> Inspirace pro moderní management a urbanismus</p>
+    </div>
+  </div>
+
+  <div class="answer-box a8">
+    <div class="answer-header">
+      <div class="answer-num">8</div>
+      <span>Sporné rysy Baťova modelu</span>
+    </div>
+    <div class="answer-content">
+      <p><strong>⚠️ Sporné rysy:</strong></p>
+      <ul>
+        <li><strong>Sociální kontrola</strong> – přísný dohled, zásahy do soukromí</li>
+        <li><strong>Závislost na firmě</strong> – silná závislost pracovníků na zaměstnavateli</li>
+        <li><strong>Nerovnost</strong> – rozhodovací moc v rukou vedení</li>
+      </ul>
+      <p><strong>🏭 Kritický pohled:</strong> „Město-firma" s odmítáním odborů, ženské emancipace a participace zaměstnanců</p>
+    </div>
+  </div>
+
+</body>
+</html>
